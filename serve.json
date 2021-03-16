@@ -1,0 +1,28 @@
+{
+  "cleanUrls": false,
+  "public": "/build/",
+  "redirects": [
+    {
+      "source": "/",
+      "destination": "/adaptive-card-loader/index.html"
+    }
+  ],
+  "rewrites": [
+    {
+      "source": "/adaptive-card-loader/:filename",
+      "destination": ":filename"
+    },
+    {
+      "source": "/adaptive-card-loader/static/:filename",
+      "destination": "static/:filename"
+    },
+    {
+      "source": "/adaptive-card-loader/static/css/:filename",
+      "destination": "static/css/:filename"
+    },
+    {
+      "source": "/adaptive-card-loader/static/js/:filename",
+      "destination": "static/js/:filename"
+    }
+  ]
+}

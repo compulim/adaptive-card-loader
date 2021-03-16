@@ -67,8 +67,8 @@ const AdaptiveCardRenderPanel = ({ className, json }) => {
     const { current: adaptiveCardContent } = adaptiveCardContentRef;
     const element = adaptiveCard.render();
 
-    for (let child of [...adaptiveCardContent.children]) {
-      adaptiveCardContent.removeChild(child);
+    while (adaptiveCardContent.children.length) {
+      adaptiveCardContent.removeChild(adaptiveCardContent.children[0]);
     }
 
     adaptiveCardContent.appendChild(element);
