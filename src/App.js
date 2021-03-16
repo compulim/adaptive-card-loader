@@ -1,23 +1,22 @@
-import logo from './logo.svg';
 import './App.css';
 
+import AdaptiveCardJSONPanel from './AdaptiveCardJSONPanel';
+import AdaptiveCardRenderPanel from './AdaptiveCardRenderPanel';
+import useSessionState from './useSessionState';
+
 function App() {
+  const [adaptiveCardJSON, setAdaptiveCardJSON] = useSessionState('', 'ADAPTIVE_CARD_JSON');
+
   return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
+    <div className="app">
+      <div className="app__set">
+        <div className="app__panel-title">Adaptive Card JSON</div>
+        <AdaptiveCardJSONPanel onChange={setAdaptiveCardJSON} value={adaptiveCardJSON} />
+      </div>
+      <div className="app__set">
+        <div className="app__panel-title">Adaptive Card render</div>
+        <AdaptiveCardRenderPanel json={adaptiveCardJSON} />
+      </div>
     </div>
   );
 }

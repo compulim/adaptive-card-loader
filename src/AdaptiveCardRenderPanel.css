@@ -1,0 +1,7 @@
+.ac-render-panel {
+  flex: 1;
+}
+
+.ac-render-panel__error {
+  color: Red;
+}
