@@ -1,7 +1,12 @@
 .ac-json-panel {
   flex: 1;
+  flex-direction: column;
   display: flex;
   padding: 10px;
+}
+
+.ac-json-panel--buttons {
+  margin-bottom: 10px;
 }
 
 .ac-json-panel__text-area {
