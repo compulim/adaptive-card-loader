@@ -34,3 +34,76 @@
 .ac-render-panel__validation-events-list {
   padding-left: 1em;
 }
+
+.ac-render-panel--web-chat {
+  --card-push-button-background-color: #0063b1;
+  --card-push-button-text-color: White;
+  --padding-regular: 10px;
+  --primary-font: 'Calibri', 'Helvetica Neue', 'Arial', 'sans-serif';
+}
+
+.ac-render-panel--web-chat .ac-input,
+.ac-render-panel--web-chat .ac-inlineActionButton,
+.ac-render-panel--web-chat .ac-quickActionButton {
+  font-family: var(--primary-font);
+}
+
+.ac-render-panel--web-chat .ac-multichoiceInput {
+  padding: var(--padding-regular);
+}
+
+.ac-render-panel--web-chat .ac-pushButton {
+  appearance: none;
+  background-color: White;
+  border-style: solid;
+  border-width: 1;
+  color: accent;
+  font-weight: 600;
+  padding: var(--padding-regular);
+}
+
+.ac-render-panel--web-chat .ac-pushButton.style-destructive {
+  background-color: #e50000;
+  color: white;
+}
+
+.ac-render-panel--web-chat .ac-pushButton.style-destructive:hover,
+.ac-render-panel--web-chat .ac-pushButton.style-destructive:active {
+  background-color: #bf0000;
+}
+
+.ac-render-panel--web-chat .ac-pushButton.style-positive {
+  background-color: #0078d7;
+  color: white;
+}
+
+.ac-render-panel--web-chat .ac-pushButton.style-positive:hover,
+.ac-render-panel--web-chat .ac-pushButton.style-positive:active {
+  background-color: #006abc;
+}
+
+.ac-render-panel--web-chat .ac-pushButton[aria-disabled='true'],
+.ac-render-panel--web-chat input[aria-disabled='true'],
+.ac-render-panel--web-chat select[aria-disabled='true'],
+.ac-render-panel--web-chat textarea[aria-disabled='true'] {
+  background-color: #ebebe4;
+  border-color: #a9a9a9;
+  border-style: solid;
+  border-width: 1px;
+  color: #545454;
+}
+
+.ac-render-panel--web-chat .ac-pushButton[aria-disabled='true'] {
+  background-color: #f0f0f0;
+  color: #6d6d6d;
+}
+
+.ac-render-panel--web-chat .ac-pushButton[aria-pressed='true'] {
+  background-color: var(--card-push-button-background-color);
+  border-color: var(--card-push-button-background-color);
+  color: var(--card-push-button-text-color);
+}
+
+.ac-render-panel--web-chat input[aria-disabled='true'] {
+  padding: 2px 1px;
+}

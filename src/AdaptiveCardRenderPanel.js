@@ -114,7 +114,10 @@ const AdaptiveCardRenderPanel = ({ className, json }) => {
       ) : (
         <div className="ac-render-panel__section">
           <h2 className="ac-render-panel__header">Rendering</h2>
-          <div className="ac-render-panel__adaptive-card" ref={adaptiveCardContentRef} />
+          <div
+            className={classNames('ac-render-panel__adaptive-card', { 'ac-render-panel--web-chat': !!hostConfig })}
+            ref={adaptiveCardContentRef}
+          />
           {!!validationEvents.length && (
             <div>
               <h2 className="ac-render-panel__header">Validation issues (non-fatal)</h2>
