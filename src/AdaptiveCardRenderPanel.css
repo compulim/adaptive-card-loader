@@ -1,7 +1,35 @@
 .ac-render-panel {
   flex: 1;
+  padding: 10px;
 }
 
-.ac-render-panel__error {
+.ac-render-panel__adaptive-card {
+  box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+  margin-bottom: 2em;
+}
+
+.ac-render-panel__error-message {
   color: Red;
+}
+
+.ac-render-panel__header {
+  font-size: 120%;
+  font-weight: lighter;
+  margin: 0 0 0.5em;
+}
+
+.ac-render-panel__section {
+  margin-top: 1em;
+}
+
+.ac-render-panel__section:first-child {
+  margin-top: 0;
+}
+
+.ac-render-panel__option {
+  margin-bottom: 0.5em;
+}
+
+.ac-render-panel__validation-events-list {
+  padding-left: 1em;
 }

@@ -11,7 +11,16 @@ const AdaptiveCardJSONPanel = ({ className, onChange, value }) => {
     [onChange]
   );
 
-  return <textarea className={classNames('ac-json-panel', className)} onChange={handleChange} value={value} />;
+  return (
+    <div className="ac-json-panel">
+      <textarea
+        className={classNames('ac-json-panel__text-area', className)}
+        onChange={handleChange}
+        spellCheck="false"
+        value={value}
+      />
+    </div>
+  );
 };
 
 export default AdaptiveCardJSONPanel;
