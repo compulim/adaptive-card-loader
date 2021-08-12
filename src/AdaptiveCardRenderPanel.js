@@ -1,5 +1,5 @@
 import { AdaptiveCard, SerializationContext } from 'adaptivecards';
-import { Fragment, useCallback, useEffect, useMemo, useRef } from 'react';
+import { useCallback, useEffect, useMemo, useRef } from 'react';
 import classNames from 'classnames';
 import MarkdownIt from 'markdown-it';
 import JSON from 'json5';
