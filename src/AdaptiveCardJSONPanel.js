@@ -16,6 +16,24 @@ const AdaptiveCardJSONPanel = ({ className, onChange, value }) => {
     [onChange]
   );
 
+  const handleLoadHelloWorld = useCallback(() => {
+    onChange(
+      JSON.stringify(
+        {
+          type: 'AdaptiveCard',
+          body: [
+            {
+              text: 'Hello, World!',
+              type: 'TextBlock'
+            }
+          ]
+        },
+        null,
+        2
+      )
+    );
+  }, [onChange]);
+
   const handlePrettify = useCallback(() => {
     onChange(JSON.stringify(parse(valueRef.current || ''), null, 2) + '\n');
   }, [onChange, valueRef]);
@@ -23,7 +41,8 @@ const AdaptiveCardJSONPanel = ({ className, onChange, value }) => {
   return (
     <div className="ac-json-panel">
       <div className="ac-json-panel--buttons">
-        <button onClick={handlePrettify}>Make it pretty</button>
+        <button className="ac-json-panel--button" onClick={handlePrettify}>Make it pretty</button>
+        <button className="ac-json-panel--button" onClick={handleLoadHelloWorld}>Load a Hello World</button>
       </div>
       <textarea
         className={classNames('ac-json-panel__text-area', className)}

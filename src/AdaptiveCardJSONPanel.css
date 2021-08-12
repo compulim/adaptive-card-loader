@@ -5,6 +5,10 @@
   padding: 10px;
 }
 
+.ac-json-panel--button {
+  margin-right: 10px;
+}
+
 .ac-json-panel--buttons {
   margin-bottom: 10px;
 }
