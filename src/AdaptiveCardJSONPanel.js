@@ -1,10 +1,14 @@
 import { parse } from 'json5';
-import { useCallback } from 'react';
+import { useCallback, useRef } from 'react';
 import classNames from 'classnames';
 
 import './AdaptiveCardJSONPanel.css';
 
 const AdaptiveCardJSONPanel = ({ className, onChange, value }) => {
+  const valueRef = useRef();
+
+  valueRef.current = value;
+
   const handleChange = useCallback(
     ({ target: { value } }) => {
       onChange && onChange(value);
@@ -13,8 +17,8 @@ const AdaptiveCardJSONPanel = ({ className, onChange, value }) => {
   );
 
   const handlePrettify = useCallback(() => {
-    onChange(JSON.stringify(parse(value), null, 2) + '\n');
-  }, [onChange]);
+    onChange(JSON.stringify(parse(valueRef.current || ''), null, 2) + '\n');
+  }, [onChange, valueRef]);
 
   return (
     <div className="ac-json-panel">

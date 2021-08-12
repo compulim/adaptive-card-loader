@@ -35,6 +35,10 @@
   padding-left: 1em;
 }
 
+.ac-render-panel__render-action {
+  margin-bottom: 10px;
+}
+
 .ac-render-panel--web-chat {
   --card-push-button-background-color: #0063b1;
   --card-push-button-text-color: White;

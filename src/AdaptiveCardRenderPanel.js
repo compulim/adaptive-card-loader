@@ -74,6 +74,12 @@ const AdaptiveCardRenderPanel = ({ className, json }) => {
     }
   }, [hostConfig, json, markdownIt]);
 
+  const handleFullscreenClick = useCallback(() => {
+    const { current } = adaptiveCardContentRef;
+
+    current && current.requestFullscreen();
+  }, [adaptiveCardContentRef]);
+
   useEffect(() => {
     if (!adaptiveCard) {
       return;
@@ -114,6 +120,7 @@ const AdaptiveCardRenderPanel = ({ className, json }) => {
       ) : (
         <div className="ac-render-panel__section">
           <h2 className="ac-render-panel__header">Rendering</h2>
+          <button className="ac-render-panel__render-action" onClick={handleFullscreenClick}>Go fullscreen</button>
           <div
             className={classNames('ac-render-panel__adaptive-card', { 'ac-render-panel--web-chat': !!hostConfig })}
             ref={adaptiveCardContentRef}
