@@ -7,7 +7,7 @@
     "@testing-library/jest-dom": "^5.11.9",
     "@testing-library/react": "^11.2.5",
     "@testing-library/user-event": "^12.8.3",
-    "adaptivecards": "^2.5.0",
+    "adaptivecards": "^2.9.0",
     "classnames": "2.2.6",
     "json5": "2.2.0",
     "markdown-it": "12.0.4",

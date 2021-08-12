@@ -1,5 +1,6 @@
-import './App.css';
+import adaptiveCardsPackageJSON from 'adaptivecards/package.json';
 
+import './App.css';
 import AdaptiveCardJSONPanel from './AdaptiveCardJSONPanel';
 import AdaptiveCardRenderPanel from './AdaptiveCardRenderPanel';
 import useSessionState from './useSessionState';
@@ -22,7 +23,9 @@ function App() {
         <AdaptiveCardJSONPanel onChange={setAdaptiveCardJSON} value={adaptiveCardJSON} />
       </div>
       <div className="app__set">
-        <h1 className="app__panel-title">Render</h1>
+        <h1 className="app__panel-title">
+          Render <small>(adaptivecards@{adaptiveCardsPackageJSON.version})</small>
+        </h1>
         <AdaptiveCardRenderPanel json={adaptiveCardJSON} />
       </div>
     </div>
