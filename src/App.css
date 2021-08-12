@@ -4,6 +4,12 @@
   height: 100%;
 }
 
+@media (orientation: portrait) {
+  .app {
+    flex-direction: column;
+  }
+}
+
 .app__set {
   display: flex;
   flex: 1;
