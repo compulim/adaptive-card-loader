@@ -33,7 +33,7 @@ const AdaptiveCardRenderPanel = ({ className, json }) => {
   const hostConfig = useMemo(() => enableHostConfig && createWebChatHostConfig(), [enableHostConfig]);
   const markdownIt = useMemo(() => enableMarkdown && new MarkdownIt(), [enableMarkdown]);
 
-  const { adaptiveCard, error, validationEvents } = useMemo(() => {
+  const { adaptiveCard, errors, validationEvents } = useMemo(() => {
     try {
       const adaptiveCard = new AdaptiveCard();
 
@@ -65,12 +65,12 @@ const AdaptiveCardRenderPanel = ({ className, json }) => {
           errors.push(serializationContext.getEventAt(i));
         }
 
-        return { error: errors.join(', ') };
+        return { errors };
       }
 
       return { adaptiveCard, validationEvents };
     } catch (err) {
-      return { error: err.message };
+      return { errors: [err] };
     }
   }, [hostConfig, json, markdownIt]);
 
@@ -112,15 +112,21 @@ const AdaptiveCardRenderPanel = ({ className, json }) => {
           </label>
         </div>
       </div>
-      {error ? (
+      {errors?.length ? (
         <div className="ac-render-panel__section ac-render-panel__error">
           <h2 className="ac-render-panel__header">Fatal error</h2>
-          <div className="ac-render-panel__error-message">{error}</div>
+          <ul>
+            {errors.map(({ message }) => (
+              <li className="ac-render-panel__error-message">{message}</li>
+            ))}
+          </ul>
         </div>
       ) : (
         <div className="ac-render-panel__section">
           <h2 className="ac-render-panel__header">Rendering</h2>
-          <button className="ac-render-panel__render-action" onClick={handleFullscreenClick}>Go fullscreen</button>
+          <button className="ac-render-panel__render-action" onClick={handleFullscreenClick}>
+            Go fullscreen
+          </button>
           <div
             className={classNames('ac-render-panel__adaptive-card', { 'ac-render-panel--web-chat': !!hostConfig })}
             ref={adaptiveCardContentRef}
